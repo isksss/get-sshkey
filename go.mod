@@ -1,3 +1,3 @@
-module github.com/isksss/get-sshkey
+module github.com/isksss/get-sshkeys
 
 go 1.20

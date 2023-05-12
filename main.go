@@ -1,13 +1,19 @@
 package main
 
 import (
-    "fmt"
-    "net/http"
-    "io/ioutil"
+	"fmt"
+	"io/ioutil"
+	"net/http"
+	"os"
 )
 
 func main() {
-    username := "isksss"
+    if len(os.Args) < 2 {
+        fmt.Println("GitHubユーザー名を指定してください。")
+        return
+    }
+
+    username := os.Args[1]
     url := fmt.Sprintf("https://github.com/%s.keys", username)
 
     resp, err := http.Get(url)
